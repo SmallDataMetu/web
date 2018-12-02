@@ -184,6 +184,7 @@ function getEmotionLogs() {
 
           url : 'https://smalldata-hack.herokuapp.com/get-rating-logs',
           type : 'POST',
+          contentType: "application/json",
           data : data,
           success : function(data) {
               drawGraph(data);
