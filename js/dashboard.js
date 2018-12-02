@@ -5,48 +5,6 @@ $( document ).ready(function() {
 
     drawGraph(
     [
- {
-    "travelId": "a6c29409-150d-4ac6-92b2-43721c95e41f",
-    "endTime": "2018-11-30T22:05:06.444+0000",
-    "rating": {
-      "anger": 2.00300731952,
-      "contempt": 5.14648448e-8,
-      "disgust": 0.000009180124,
-      "fear": 0.0001912825,
-      "happiness": 0.9875571,
-      "neutral": 5.0009861537,
-      "sadness": 0.00001889955,
-      "surprise": 0.008229999
-    }
-  },
- {
-    "travelId": "a6c29409-150d-4ac6-92b2-43721c95e41f",
-    "endTime": "2018-12-01T22:05:06.444+0000",
-    "rating": {
-      "anger": 3.00300731952,
-      "contempt": 5.14648448e-8,
-      "disgust": 0.000009180124,
-      "fear": 0.0001912825,
-      "happiness": 0.9875571,
-      "neutral": 0.0009861537,
-      "sadness": 7.00001889955,
-      "surprise": 2.008229999
-    }
-  },
- {
-    "travelId": "a6c29409-150d-4ac6-92b2-43721c95e41f",
-    "endTime": "2018-12-02T22:05:06.444+0000",
-    "rating": {
-      "anger": 0.00300731952,
-      "contempt": 5.14648448e-8,
-      "disgust": 0.000009180124,
-      "fear": 3.0001912825,
-      "happiness": 0.9875571,
-      "neutral": 1.0009861537,
-      "sadness": 5.00001889955,
-      "surprise": 0.008229999
-    }
-  }
     ]
     );
 
@@ -55,8 +13,10 @@ $( document ).ready(function() {
 
 function drawGraph(data) {
 
+
+
     // set the dimensions and margins of the graph
-    var margin = {top: 40, right: 20, bottom: 40, left: 50};
+    var margin = {top: 40, right: 60, bottom: 40, left: 40};
     var height = window.innerHeight - margin.top - margin.bottom;
     var width = $("#chart-line").width() - margin.left - margin.right;
 
@@ -162,7 +122,7 @@ function drawGraph(data) {
             .attr("class", "sadnessLine")
             .attr("d", sadnessLine)
             .attr("dy", "2.35em")
-            .attr("text-anchor", "middle")
+            .attr("text-anchor", "end")
             .text("Sadness");
         // Add the valueline path.
         svg.append("path")
@@ -170,14 +130,26 @@ function drawGraph(data) {
             .attr("class", "surpriseLine")
             .attr("d", surpriseLine)
             .text("Surprise");
+        svg.append("text")      // text label for the x axis
+             .attr("x", 20 )
+             .attr("y",  -20 )
+             .style("text-anchor", "middle")
+             .text("Emotion Rate");
+         svg.append("text")      // text label for the x axis
+                 .attr("x", width + 40 )
+                 .attr("y",  height + 20 )
+                 .style("text-anchor", "middle")
+                 .text("Date");
 
         // Add the X Axis
         svg.append("g")
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x));
+
         // Add the Y Axis
         svg.append("g")
             .call(d3.axisLeft(y));
+
 
 }
 
@@ -210,7 +182,7 @@ function getEmotionLogs() {
       };
       $.ajax({
 
-          url : 'localhost:8080/get-rating-logs',
+          url : 'https://smalldata-hack.herokuapp.com/get-rating-logs',
           type : 'POST',
           contentType: "application/json",
           dataType : 'json',
