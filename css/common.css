@@ -1,0 +1,40 @@
+.angerLine {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
+}
+.contemptLine {
+  fill: none;
+  stroke: blue;
+  stroke-width: 2px;
+}
+.disgustLine {
+  fill: none;
+  stroke: brown;
+  stroke-width: 2px;
+}
+.fearLine {
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;
+}
+.happinessLine {
+  fill: none;
+  stroke: green;
+  stroke-width: 2px;
+}
+.neutralLine {
+  fill: none;
+  stroke: grey;
+  stroke-width: 2px;
+}
+.sadnessLine {
+  fill: none;
+  stroke: yellow;
+  stroke-width: 2px;
+}
+.surpriseLine {
+  fill: none;
+  stroke: purple;
+  stroke-width: 2px;
+}

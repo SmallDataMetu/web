@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Rating Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <script src="http://d3js.org/d3.v4.js" charset="utf-8"></script>
+    <script src="js/bootstrap-datepicker.js" ></script>
+    <script src="js/applicationutils.js" ></script>
+    <script src="js/dashboard.js" ></script>
+
+    <!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+</head>
+<body>
+
+<div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+    <div id="chart-line" class="col-md-8"></div>
+    <div class="col-md-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">Travel Scores</div>
+            <div class="panel-body">
+                <form id="getRatingForm" class="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Driver Id" id="driverId">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Travel Id" id="vehicleId">
+                    </div>
+                    <div class="form-group">
+                        <input  class="form-control" placeholder="Start Time" id="startTime">
+                    </div>
+                    <div class="form-group">
+                        <input  class="form-control" placeholder="End Time" id="endTime">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success" type="button" onclick="getEmotionLogs()">Get Emotion Logs</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
