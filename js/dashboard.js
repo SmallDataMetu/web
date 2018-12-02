@@ -68,12 +68,12 @@ function drawGraph(data) {
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
 
-    var parseTime = d3.timeParse("%Y-%m-%d");
+    var parseTime = d3.timeParse("%Y-%m-%dT%H:%M");
 
     // format the data
     data.forEach(function(d) {
       //d.endTime = d3.isoParse(d.endTime);
-      d.endTime = parseTime(d.endTime.substr(0,10));
+      d.endTime = parseTime(d.endTime.substr(0,16));
     });
 
     // Scale the range of the data
