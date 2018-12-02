@@ -18,7 +18,7 @@ function drawGraph(data) {
     // set the dimensions and margins of the graph
     var margin = {top: 40, right: 60, bottom: 40, left: 40};
     var height = window.innerHeight - margin.top - margin.bottom;
-    var width = $("#chart-line").width() - margin.left - margin.right;
+    var width = $("#chartLine").width() - margin.left - margin.right;
 
     // set the ranges
     var x = d3.scaleTime().range([0, width]);
@@ -61,7 +61,7 @@ function drawGraph(data) {
     // append the svg obgect to the body of the page
     // appends a 'group' element to 'svg'
     // moves the 'group' element to the top left margin
-    var svg = d3.select("#chart-line").append("svg")
+    var svg = d3.select("#chartLine").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
       .append("g")
