@@ -12,7 +12,7 @@ Based on provided query fields, dashboard will be drawn to show queried data.
 
 # How to use?
 
-The webpage is hosted at http://smalldata.surge.sh/dashboard 
+The webpage is hosted at https://smalldata.surge.sh/dashboard 
 
 # Team Small Data
 
